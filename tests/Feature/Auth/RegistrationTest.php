@@ -1,6 +1,9 @@
 <?php
 
 use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
 
 test('The registration screen can be rendered', function () {
     $response = $this->get('/register');
