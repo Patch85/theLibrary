@@ -22,6 +22,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'appVersion' => config('app.version'),
         'appName' => config('app.name'),
+        'currentYear' => now()->year,
     ]);
 });
 
