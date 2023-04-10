@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class HoldingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::all()->random()->id,
+            'name' => fake()->words(3, true),
+            'description' => fake()->sentence(),
+            'holding_type' => fake()->randomElement(['book', 'eBook', 'article', 'DVD', 'CD']),
         ];
     }
 }
