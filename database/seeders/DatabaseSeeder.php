@@ -19,5 +19,9 @@ class DatabaseSeeder extends Seeder
             'email' => env('DEV_SEEDING_USER_EMAIL'),
             'password' => bcrypt(env('DEV_SEEDING_USER_PASSWORD')),
         ]);
+
+        $this->call([
+            HoldingSeeder::class,
+        ]);
     }
 }
