@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -42,8 +43,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function holdings()
+    /**
+     * A user can have many holdings
+     *
+     * @return HasMany
+     */
+    public function holdings(): HasMany
     {
         return $this->hasMany(Holding::class);
+    }
+
+    /**
+     * A user can have many collections
+     *
+     * Collections are groupings of a user's holdings
+     *
+     * @return HasMany
+     */
+    public function collections(): HasMany
+    {
+        return $this->hasMany(Collection::class);
     }
 }

@@ -17,8 +17,11 @@ class HoldingFactory extends Factory
      */
     public function definition(): array
     {
+        $user = User::all()->random();
+
         return [
-            'user_id' => User::all()->random()->id,
+            'user_id' => $user->id,
+            'collection_id' => $user->collections->random()->id,
             'name' => fake()->words(3, true),
             'description' => fake()->sentence(),
             'holding_type' => fake()->randomElement(['book', 'eBook', 'article', 'DVD', 'CD']),

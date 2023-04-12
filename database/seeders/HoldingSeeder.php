@@ -12,6 +12,6 @@ class HoldingSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Holding::factory(50)->create();
+        \App\Models\Holding::factory(500)->create();
     }
 }
