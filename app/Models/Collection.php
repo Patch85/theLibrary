@@ -23,8 +23,8 @@ class Collection extends Model
 
     /**
      * A Collection belongs to one user
-     * 
-     * @return BelongsTo 
+     *
+     * @return BelongsTo
      */
     public function owner()
     {
@@ -33,8 +33,8 @@ class Collection extends Model
 
     /**
      * A Collection can contain many Holdings
-     * 
-     * @return HasMany 
+     *
+     * @return HasMany
      */
     public function contents()
     {

@@ -45,8 +45,6 @@ class User extends Authenticatable
 
     /**
      * A user can have many holdings
-     *
-     * @return HasMany
      */
     public function holdings(): HasMany
     {
@@ -57,8 +55,6 @@ class User extends Authenticatable
      * A user can have many collections
      *
      * Collections are groupings of a user's holdings
-     *
-     * @return HasMany
      */
     public function collections(): HasMany
     {
